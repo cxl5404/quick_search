@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">{{ switch.switch_model }}</h1>
+                        <a href="{% url 'hp:switch_list_100'%}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-chevron-left fa-sm text-white-50"></i> Back</a>
+                    </div>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <th>100BASE-T</th>
+                                            {% if switch.HBASET == '/' %} 
+                                            <td>{{ switch.HBASET }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HBASET}}&searchSubmit=Search" target="_blank" > {{ switch.HBASET }}</a></td>
+                                            {% endif %}
+
+                                        </tr>
+
+                                        <tr>
+                                            <th>100FX</th>
+                                            {% if switch.HFX == '/' %}
+                                            <td>{{ switch.HFX }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HFX }}&searchSubmit=Search" target="_blank" >{{ switch.HFX }}</a></td>
+                                            {% endif %}
+
+                                        </tr>
+
+                                        <tr>
+                                            <th>100LX</th>
+                                            {% if switch.HLX == '/' %}
+                                            <td>{{ switch.HLX }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HLX }}&searchSubmit=Search" target="_blank" >{{ switch.HLX }}</a></td>
+                                            {% endif %}
+                                        </tr>                                        
+                                        <tr>
+                                            <th>100EX</th>
+                                            {% if switch.HEX == '/' %}
+                                            <td>{{ switch.HEX }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HEX }}&searchSubmit=Search" target="_blank" >{{ switch.HEX }}</a></td>
+                                            {% endif %}
+
+                                        </tr>
+
+                                         <tr>
+                                            <th>100ZX</th>
+                                            {% if switch.HZX == '/' %}
+                                            <td>{{ switch.HZX }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HZX }}&searchSubmit=Search" target="_blank" >{{ switch.HZX }}</a></td>
+                                            {% endif %}
+                                        </tr>
+
+                                        <tr>
+                                            <th>100M BD</th>
+                                            {% if switch.HBD == '/' %}
+                                            <td>{{ switch.HBD }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HBD }}&searchSubmit=Search" target="_blank" >{{ switch.HBD }}</a></td>
+                                            {% endif %}
+
+                                        </tr>
+
+                                        <tr>
+                                            <th>100M BU</th>
+                                            {% if switch.HBU == '/' %}
+                                            <td>{{ switch.HBU }}</td>
+                                            {% else %}
+                                            <td><a href="https://www.fs.com/index.php?main_page=advanced_search_result&keyword={{switch.HBU }}&searchSubmit=Search" target="_blank" >{{ switch.HBU }}</a></td>
+                                            {% endif %}
+
+                                        </tr>
+                                        
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock content %}
